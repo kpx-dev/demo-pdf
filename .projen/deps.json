@@ -1,12 +1,20 @@
 {
   "dependencies": [
     {
+      "name": "@types/faker",
+      "type": "build"
+    },
+    {
       "name": "@types/jest",
       "type": "build"
     },
     {
       "name": "@types/node",
       "version": "^10.17.0",
+      "type": "build"
+    },
+    {
+      "name": "@types/pdfkit",
       "type": "build"
     },
     {
@@ -81,6 +89,22 @@
     {
       "name": "@aws-cdk/core",
       "version": "^1.95.2",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-sdk/client-s3",
+      "type": "runtime"
+    },
+    {
+      "name": "faker",
+      "type": "runtime"
+    },
+    {
+      "name": "get-stream",
+      "type": "runtime"
+    },
+    {
+      "name": "pdfkit",
       "type": "runtime"
     }
   ],

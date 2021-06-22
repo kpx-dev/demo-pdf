@@ -20,8 +20,10 @@
     "start": "npx projen start"
   },
   "devDependencies": {
+    "@types/faker": "^5.5.6",
     "@types/jest": "^26.0.23",
     "@types/node": "^10.17.0",
+    "@types/pdfkit": "^0.11.0",
     "@typescript-eslint/eslint-plugin": "^4.28.0",
     "@typescript-eslint/parser": "^4.28.0",
     "aws-cdk": "^1.95.2",
@@ -40,7 +42,11 @@
   },
   "dependencies": {
     "@aws-cdk/assert": "^1.95.2",
-    "@aws-cdk/core": "^1.95.2"
+    "@aws-cdk/core": "^1.95.2",
+    "@aws-sdk/client-s3": "^3.18.0",
+    "faker": "^5.5.3",
+    "get-stream": "^6.0.1",
+    "pdfkit": "^0.12.1"
   },
   "bundledDependencies": [],
   "license": "Apache-2.0",
