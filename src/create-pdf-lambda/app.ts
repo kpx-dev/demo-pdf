@@ -55,6 +55,7 @@ const handler = async () => {
   };
 
   const ddbRes = await ddbClient.put(ddbParams).promise();
+  console.log('ddb res', ddbRes);
 
   // const pdfBuffer = await getStream.buffer(doc);
   // const pdfBase64 = pdfBuffer.toString('base64');

@@ -35,9 +35,21 @@ export class DemoPdfStack extends cdk.Stack {
         S3_BUCKET: pdfBucket.bucketName,
         DDB_TABLE: table.tableName
       },
-      code: lambda.Code.fromAsset(path.join(__dirname, '..', '..')),
+      code: lambda.Code.fromAsset(path.join(__dirname, '..', '..', 'src', 'create-pdf-lambda')),
     });
     pdfBucket.grantReadWrite(createPdfLambda);
+
+    // const getPdfLambda = new lambda.Function(this, 'get-pdf-lambda', {
+    //   runtime: lambda.Runtime.NODEJS_14_X,
+    //   handler: 'src/create-pdf-lambda/app.handler',
+    //   timeout: Duration.seconds(30),
+    //   environment: {
+    //     S3_BUCKET: pdfBucket.bucketName,
+    //     DDB_TABLE: table.tableName
+    //   },
+    //   code: lambda.Code.fromAsset(path.join(__dirname, '..', '..', 'src', 'create-pdf-lambda')),
+    // });
+    // pdfBucket.grantReadWrite(createPdfLambda);
 
     // new apigateway.LambdaRestApi(this, 'pdf-api', {
     //   handler: pdfLambda,
