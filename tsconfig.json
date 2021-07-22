@@ -21,10 +21,13 @@
     "strictPropertyInitialization": false,
     "typeRoots": [
       "./node_modules/@types"
-    ]
+    ],
+    "types": [],
+    "skipLibCheck": true,
   },
   "exclude": [
     "node_modules",
+    "*node_modules",
     "cdk/cdk.out",
     "cdk/node_modules",
   ]
