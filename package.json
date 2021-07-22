@@ -1,6 +1,7 @@
 {
   "name": "demo-pdf",
   "version": "0.1.0",
+  "license": "MIT",
   "bin": {
     "demo-pdf": "bin/demo-pdf.js"
   },

@@ -1,6 +1,7 @@
 {
   "name": "demo-pdf-cdk",
   "version": "0.1.0",
+  "license": "MIT",
   "bin": {
     "demo-pdf-cdk": "bin/demo-pdf.js"
   },

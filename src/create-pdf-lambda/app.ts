@@ -5,7 +5,7 @@ import * as pdfkit from 'pdfkit';
 import * as fs from 'fs';
 
 const s3Client = new AWS.S3();
-const ddbClient = new AWS.DynamoDB();
+const ddbClient = new AWS.DynamoDB.DocumentClient();
 
 const S3_BUCKET = process.env.S3_BUCKET || "";
 const DDB_TABLE = process.env.DDB_TABLE || "";
@@ -36,17 +36,17 @@ const handler = async () => {
   doc.end();
 
   const fileName = `${faker.datatype.uuid()}.pdf`;
-  const params = {
+  const s3Params = {
     Body: doc,
     Bucket: S3_BUCKET,
     Key:  fileName
   };
 
   // console.log('s3 params ', params);
-  const res = await s3Client.putObject(params).promise();
+  const res = await s3Client.putObject(s3Params).promise();
   console.log(res);
 
-  const params2 = {
+  const ddbParams = {
     TableName: DDB_TABLE,
     Item: {
       id: fileName,
@@ -54,7 +54,7 @@ const handler = async () => {
     }
   };
 
-  const ddbRes = await ddbClient.putItem(params2).promise();
+  const ddbRes = await ddbClient.put(ddbParams).promise();
 
   // const pdfBuffer = await getStream.buffer(doc);
   // const pdfBase64 = pdfBuffer.toString('base64');
