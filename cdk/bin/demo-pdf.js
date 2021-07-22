@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+require("source-map-support/register");
+const cdk = require("@aws-cdk/core");
+const demo_pdf_stack_1 = require("../../cdk/lib/demo-pdf-stack");
+const app = new cdk.App();
+new demo_pdf_stack_1.DemoPdfStack(app, 'demo-pdf-stack', {});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZGVtby1wZGYuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJkZW1vLXBkZi50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFDQSx1Q0FBcUM7QUFDckMscUNBQXFDO0FBQ3JDLGlFQUE0RDtBQUU1RCxNQUFNLEdBQUcsR0FBRyxJQUFJLEdBQUcsQ0FBQyxHQUFHLEVBQUUsQ0FBQztBQUMxQixJQUFJLDZCQUFZLENBQUMsR0FBRyxFQUFFLGdCQUFnQixFQUFFLEVBQUUsQ0FBQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiIyEvdXNyL2Jpbi9lbnYgbm9kZVxuaW1wb3J0ICdzb3VyY2UtbWFwLXN1cHBvcnQvcmVnaXN0ZXInO1xuaW1wb3J0ICogYXMgY2RrIGZyb20gJ0Bhd3MtY2RrL2NvcmUnO1xuaW1wb3J0IHsgRGVtb1BkZlN0YWNrIH0gZnJvbSAnLi4vLi4vY2RrL2xpYi9kZW1vLXBkZi1zdGFjayc7XG5cbmNvbnN0IGFwcCA9IG5ldyBjZGsuQXBwKCk7XG5uZXcgRGVtb1BkZlN0YWNrKGFwcCwgJ2RlbW8tcGRmLXN0YWNrJywge30pO1xuIl19
